@@ -1,19 +1,17 @@
-import {Platform, PermissionsAndroid} from 'react-native';
+import {PermissionsAndroid, Platform} from 'react-native';
+import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
 
 export const requestCameraAndGalleryPermissions = async (): Promise<void> => {
   if (Platform.OS === 'android') {
     try {
-      // Request Camera Permission
       const cameraPermission = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.CAMERA,
       );
 
-      // Request Gallery (Storage) Permission
       const galleryPermission = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
       );
 
-      // Check if both permissions were granted
       if (
         cameraPermission === PermissionsAndroid.RESULTS.GRANTED &&
         galleryPermission === PermissionsAndroid.RESULTS.GRANTED
@@ -23,7 +21,20 @@ export const requestCameraAndGalleryPermissions = async (): Promise<void> => {
         console.log('Camera and/or Gallery permissions denied');
       }
     } catch (error) {
-      console.error('Error requesting permissions:', error);
+      console.error('Error requesting Android permissions:', error);
+    }
+  } else if (Platform.OS === 'ios') {
+    try {
+      const cameraStatus = await request(PERMISSIONS.IOS.CAMERA);
+      const photoStatus = await request(PERMISSIONS.IOS.PHOTO_LIBRARY);
+
+      if (cameraStatus === RESULTS.GRANTED && photoStatus === RESULTS.GRANTED) {
+        console.log('Camera and Photo Library permissions granted');
+      } else {
+        console.log('Camera and/or Photo Library permissions denied');
+      }
+    } catch (error) {
+      console.error('Error requesting iOS permissions:', error);
     }
   }
 };
