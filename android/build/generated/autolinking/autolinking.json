@@ -600,9 +600,9 @@
     "ios": {
       "sourceDir": "/Users/inno/Projects/Self/ShopSmartApp/ios",
       "xcodeProject": {
-        "name": "ShopSmartApp.xcodeproj",
+        "name": "ShopSmartApp.xcworkspace",
         "path": ".",
-        "isWorkspace": false
+        "isWorkspace": true
       },
       "assets": []
     },

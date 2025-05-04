@@ -16,25 +16,25 @@ export const requestCameraAndGalleryPermissions = async (): Promise<void> => {
         cameraPermission === PermissionsAndroid.RESULTS.GRANTED &&
         galleryPermission === PermissionsAndroid.RESULTS.GRANTED
       ) {
-        console.log('Camera and Gallery permissions granted');
+        console.log('Android permissions granted');
       } else {
-        console.log('Camera and/or Gallery permissions denied');
+        console.warn('Android permissions denied');
       }
     } catch (error) {
-      console.error('Error requesting Android permissions:', error);
+      console.error('Android permission error:', error);
     }
-  } else if (Platform.OS === 'ios') {
+  } else {
     try {
       const cameraStatus = await request(PERMISSIONS.IOS.CAMERA);
       const photoStatus = await request(PERMISSIONS.IOS.PHOTO_LIBRARY);
 
       if (cameraStatus === RESULTS.GRANTED && photoStatus === RESULTS.GRANTED) {
-        console.log('Camera and Photo Library permissions granted');
+        console.log('iOS permissions granted');
       } else {
-        console.log('Camera and/or Photo Library permissions denied');
+        console.warn('iOS permissions denied');
       }
     } catch (error) {
-      console.error('Error requesting iOS permissions:', error);
+      console.error('iOS permission error:', error);
     }
   }
 };
