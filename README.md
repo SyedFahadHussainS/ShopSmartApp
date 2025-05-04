@@ -14,16 +14,18 @@ A cross-platform e-commerce demo app built using React Native and Redux Toolkit.
 
 🧰 Tech Stack
 Tool Purpose
+
 React Native Cross-platform mobile development
+
 Redux Toolkit Efficient and scalable state management
+
 React Navigation Seamless navigation between screens
+
 react-native-image-picker Image selection from camera/gallery
+
 react-native-toast-message In-app toast notifications
 
 📁 Folder Structure
-bash
-Copy
-Edit
 /src
 /screens # Product, Cart, Profile screens
 /components # Reusable UI components (e.g., Avatar, InputField)
@@ -32,6 +34,7 @@ Edit
 Store.ts # Root Redux store
 /assets
 /ScreenShots # App screenshots (Android & iOS)
+
 Why this structure?
 This modular and feature-based structure improves code organization, readability, and maintainability — especially as the app grows.
 
@@ -44,7 +47,7 @@ This modular and feature-based structure improves code organization, readability
 
 📸 Screenshots
 Android
-assests/ScreenShots/Android
+src/assets/ScreenShots/Android
 
 iOS
-assests/ScreenShots/iOS
+src/assets/ScreenShots/iOS
