@@ -26,14 +26,20 @@ react-native-image-picker Image selection from camera/gallery
 react-native-toast-message In-app toast notifications
 
 📁 Folder Structure
+
 /src
+
 /screens # Product, Cart, Profile screens
+
 /components # Reusable UI components (e.g., Avatar, InputField)
+
 /redux
 /Slices # Redux slices (cart, wishlist, profile)
 Store.ts # Root Redux store
+
 /assets
 /ScreenShots # App screenshots (Android & iOS)
+
 
 Why this structure?
 This modular and feature-based structure improves code organization, readability, and maintainability — especially as the app grows.
@@ -46,6 +52,7 @@ This modular and feature-based structure improves code organization, readability
 🧪 Product data is hardcoded to avoid backend/API setup.
 
 📸 Screenshots
+
 Android
 src/assets/ScreenShots/Android
 
